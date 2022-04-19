@@ -17,16 +17,16 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+In this assignment you will learn how to display things (such as shapes, lines, text, and images) onto a portion of an HTML5 page called a “canvas.”  
  
 Known Issues:
-blah, blah, blah, blah
+No known issues.
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
    <head> 
-      <title>App6---HTML5-Canvas</title>  
+      <title>App6---HTML5-Canvas</title> 
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -34,11 +34,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
    </head> 
 
 
-<script>
+<script> 
+ 
 var docMod = document.lastModified; // loads last modified time stamp into docMod variable
+/* 
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
-console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
-</script>
+*/
+console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 	
+					
+</script> 
 
 
 
@@ -63,56 +67,72 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 </style>
 
 <body>
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>App6---HTML5-Canvas</h1>
-	<!DOCTYPE html>
-<html>
-<body>
-
-<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
-</canvas>
-<div class="page" id="one">
-<div id= “header” class=“w3-container w3-flat-carrot”>
-<h1>Rectangle</h1>	
-	</div>
-	<div id="content" class="w3-container">
-	<p>Make a Rectangle</p>   
-		<html>
-<body>
-
-<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
-<html>
-<body>
-
-<canvas id="myCanvas" width="220" height="100" style="border:1px solid #d3d3d3;">
-</canvas>
-
-<script>
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.font = "30px Arial";
-ctx.fillText("Emha Hinojosa",10,50);
-</script>
-
-</body>
-</html>
-</canvas>
-
-</body>
-</html>
-</body>
-</html>
+<div id="header" class="w3-container w3-deep-purple"> 
+	<h1>App6---HTML5-Canvas</h1> 
 </div>
 	
 <div id="content" class="w3-container">
-	<p>App6---HTML5-Canvas.</p>
-		
+	
+	<p>Draw on me!</p>
+
+	<p><canvas id="myCanvas" width="250" height="165" style="border:2px solid #6f8200;"></canvas></p> 
+
+<script> 
+
+
+function drawRectangle() { 
+	var canvas = document.getElementById("myCanvas"); 
+	var ctx = canvas.getContext("2d"); 
+	ctx.fillStyle = "#318000"; 
+    ctx.fillRect(50, 25, 150, 100); 
+};
+</script> 
+	
+	<button onClick="drawRectangle();" class="w3-btn w3-purple w3-round">Rectangle</button> 
+
+<script> 
+
+
+function drawName() { 
+	var canvas = document.getElementById("myCanvas"); 
+    
+       	var ctx = canvas.getContext("2d"); 
+	ctx.font = "30px Arial"; 
+	ctx.textAlign = "center"; 
+	ctx.fillText("Emha Hinojosa", canvas.width/2, canvas.height/2); // 
+};
+</script> 
+	
+	<button onClick="drawName();" class="w3-btn w3-purple w3-round">Name</button> 
+    
+<script> 
+	
+
+
+	} 
+};
+</script> 
+	
+	<button onClick="drawImage();" class="w3-btn w3-purple w3-round">Image</button> 
+	
+<script> 
+
+
+	function clearCanvas() { 
+		var canvas = document.getElementById("myCanvas"); 
+		var ctx = canvas.getContext("2d"); 
+		ctx.clearRect(0, 0, canvas.width, canvas.height); 
+};
+</script> 
+	
+	<button onClick="clearCanvas();" class="w3-btn w3-purple w3-round">Reset Canvas</button> 
+	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
-<footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
+<footer class="w3-bottom w3-container w3-deep-purple">
+	<p>DIY FRI STREAM: APP 6!</p>
 </footer>
 
 </body>
